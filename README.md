@@ -16,3 +16,5 @@ The object detection model provides the mAP50 score of 0.989 for virtual environ
 and mAP50 score of 0.989 for physical environment. Also, the speech recognition
 model generated a Character Error Rate (CER) of 3.47% and Word Error Rate (WER)
 of 4.46% on training dataset.
+![Screenshot from 2024-03-01 20-57-53](https://github.com/Bikash9841/Drink-Serving-Robotic-Arm-Relying-on-Multimodal-Inputs/assets/58942839/3cee81eb-e179-472a-a85b-cd7b4d99db4e)
+![Screenshot from 2024-03-01 20-58-20](https://github.com/Bikash9841/Drink-Serving-Robotic-Arm-Relying-on-Multimodal-Inputs/assets/58942839/12cf5f19-b37d-4fdf-a061-1577f6d5d135)
