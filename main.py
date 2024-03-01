@@ -7,12 +7,12 @@ from library import threshold as th
 from inverse_MPC import driverCodeMPC_4 as mpc
 import pygame
 import numpy as np
-# import cv2
+import cv2
 import time
 import nemo
 import nemo.collections.asr as nemo_asr
 import torch
-# import serial
+import serial
 
 
 ## ----------------ASR INITIALIZATION--------------##
@@ -23,7 +23,6 @@ wav_file_path = 'datasets/67-602650-0039.wav'
 asr_model = nemo.collections.asr.models.EncDecCTCModelBPE.restore_from(
     'model_3.nemo')
 asr_model = asr_model.to('cuda' if torch.cuda.is_available() else 'cpu')
-
 
 words_to_check = ["sprite", "water", "coffee", "orange"]
 
@@ -171,27 +170,27 @@ while True:
 
                 elif len(blockage) == 0:
                     print("no problems")
-                    # print('Order your desired drink')
+                    print('Order your desired drink')
 
-                    # nc.record_and_save_audio(
-                    #     5, wav_file_path, sample_rate=16000)
+                    nc.record_and_save_audio(
+                        5, wav_file_path, sample_rate=16000)
 
-                    # print(f"Audio recorded and saved at {wav_file_path}")
+                    print(f"Audio recorded and saved at {wav_file_path}")
 
-                    # # Assuming asr_model and check_sentence() are defined elsewhere
+                    # Assuming asr_model and check_sentence() are defined elsewhere
 
-                    # transcription = asr_model.transcribe([wav_file_path])
+                    transcription = asr_model.transcribe([wav_file_path])
 
-                    # transcription = transcription[0].replace(
-                    #     "['", "").replace("']", "")
-                    # print(transcription)
-                    # flagis = nc.check_sentence(transcription, words_to_check)
-                    # flaghy = nc.check_sentence(transcription, ["hey", "arm"])
-                    # print(flagis, flaghy)
-                    # if (flaghy == 1 or flaghy == 2):
-                    #     print("command now enters hereeeeeeee")
-                    # else:
-                    #     continue
+                    transcription = transcription[0].replace(
+                        "['", "").replace("']", "")
+                    print(transcription)
+                    flagis = nc.check_sentence(transcription, words_to_check)
+                    flaghy = nc.check_sentence(transcription, ["hey", "arm"])
+                    print(flagis, flaghy)
+                    if (flaghy == 1 or flaghy == 2):
+                        print("command now enters hereeeeeeee")
+                    else:
+                        continue
 
                     # arm moves here.....................................arm ......... arm ,,,,,,,,,,2
                     optimizedJointAngles, _ = mpc.invOpt(
