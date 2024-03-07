@@ -4,6 +4,7 @@ import pyaudio
 import wave
 import os
 
+
 def record_audio_with_threshold(save_location):
     # Set up the VAD
     vad = webrtcvad.Vad()
@@ -70,7 +71,8 @@ def record_audio_with_threshold(save_location):
                         wf.writeframes(b''.join(frames))
 
                     # Break the loop if recorded audio duration is >= 2 seconds
-                    duration = len(frames) * chunk_duration / 1000  # in seconds
+                    duration = len(frames) * chunk_duration / \
+                        1000  # in seconds
                     if duration >= 2:
                         break
 
@@ -87,5 +89,3 @@ def record_audio_with_threshold(save_location):
 # Example usage:
 # audio_save_location = "recorded_speech.wav"
 # record_audio_with_threshold(audio_save_location)
-
-

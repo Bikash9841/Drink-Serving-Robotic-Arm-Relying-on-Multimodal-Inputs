@@ -124,7 +124,7 @@ while True:
 
         coor_obstacle = tl.transform_coordinates(coor_obstacle)
         coor_cup = tl.transform_coordinates(coor_cup)
-        print(f"this is cup coordinate: {coor_cup}")
+        print(f'this is cup coordinate: {coor_cup}')
 
         # choose glass to pick here ....................
         if coor_cup != []:

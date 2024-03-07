@@ -4,7 +4,9 @@ opencv-python==4.9.0.80
 PyAudio==0.2.14
 pygame==2.5.2
 pyserial==3.5
-requests==2.2.2
+requests
 transformers==4.35.2
-torch==2.2.0
 ultralytics==8.1.9
+torch
+sounddevice
+webrtcvad
